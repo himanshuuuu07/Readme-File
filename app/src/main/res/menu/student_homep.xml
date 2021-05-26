@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <item-->
+<!--        android:id="@+id/Home_button"-->
+<!--        android:icon="@drawable/outline_home_black_24dp"-->
+<!--        android:title="Home"/>-->
+<!--    <item-->
+<!--        android:id="@+id/student_profile"-->
+<!--        android:icon="@drawable/account"-->
+<!--        android:title="Profile"/>-->
+
+<!--    <item-->
+<!--        android:id="@+id/notification_student"-->
+<!--        android:icon="@drawable/notification"-->
+<!--        android:title="Notifications"/>-->
+
+<!--    <item-->
+<!--        android:id="@+id/placement_record"-->
+<!--        android:icon="@drawable/policy"-->
+<!--        android:title="Records"/>-->
+
+<!--    <item-->
+<!--        android:id="@+id/placement_handbook"-->
+<!--        android:icon="@drawable/hands"-->
+<!--        android:title="Handbook"/>-->
+
+</menu>

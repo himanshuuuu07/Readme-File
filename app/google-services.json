@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1099111361066",
+    "project_id": "newtpo-be4db",
+    "storage_bucket": "newtpo-be4db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1099111361066:android:901ceaa8ad27238bd3f153",
+        "android_client_info": {
+          "package_name": "com.example.newtpo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1099111361066-fa4fr3ln71pdgo5mks301id8lsm42e9n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newtpo",
+            "certificate_hash": "99003e2daaa400c5a9be0d5e300429c65706cc9b"
+          }
+        },
+        {
+          "client_id": "1099111361066-7o6vgh6o7o583g05jfl8rr4a0nclip8h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv5I9J65r19fs6qfeVdipq55JAK87TlOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1099111361066-7o6vgh6o7o583g05jfl8rr4a0nclip8h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
