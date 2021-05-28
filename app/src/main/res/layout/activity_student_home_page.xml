@@ -202,38 +202,6 @@
 
 
 
-            <androidx.cardview.widget.CardView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                android:layout_margin="12dp"
-                app:cardCornerRadius="12dp"
-                android:backgroundTint="#fff"
-                android:onClick="edit_stu_profile">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:src="@drawable/user"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:text="Edit"
-                        android:layout_marginTop="12dp"
-                        android:textColor="#000"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
         </GridLayout>
 
     </LinearLayout>

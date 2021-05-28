@@ -41,37 +41,37 @@ public class edit_student_profile extends AppCompatActivity {
         userID=firebaseAuth.getCurrentUser().getUid();
 
 
-        stu_branch=(AutoCompleteTextView)findViewById(R.id.branch);
-        stu_gender=(AutoCompleteTextView)findViewById(R.id.gender);
-        stu_year_ofStudy=(AutoCompleteTextView) findViewById(R.id.year_of_study);
-        stu_year_ofGraduation=(AutoCompleteTextView) findViewById(R.id.year_of_graduation);
+        stu_branch= findViewById(R.id.branch);
+        stu_gender= findViewById(R.id.gender);
+        stu_year_ofStudy= findViewById(R.id.year_of_study);
+        stu_year_ofGraduation= findViewById(R.id.year_of_graduation);
 
-        stu_name=(TextInputEditText)findViewById(R.id.full_name);
-        stu_prn=(TextInputEditText)findViewById(R.id.prn_no);
-        stu_dob=(TextInputEditText)findViewById(R.id.birth_date);
-        stu_age=(TextInputEditText)findViewById(R.id.age);
-        stu_college_email=(TextInputEditText)findViewById(R.id.email_college);
-        stu_alt_email=(TextInputEditText)findViewById(R.id.email_alt);
-        stu_phone=(TextInputEditText)findViewById(R.id.mobile);
-        stu_alt_phone=(TextInputEditText)findViewById(R.id.mobile_alt);
-        stu_linkdin=(TextInputEditText)findViewById(R.id.linkdin);
-        stu_per_address=(TextInputEditText)findViewById(R.id.address_per);
-        stu_res_address=(TextInputEditText)findViewById(R.id.address_res);
-        stu_ssc_passYear=(TextInputEditText)findViewById(R.id.year_of_ssc);
-        stu_ssc_school=(TextInputEditText)findViewById(R.id.scc_school_name);
-        stu_ssc_percentage=(TextInputEditText)findViewById(R.id.percent_ssc);
-        stu_hscDiplo_passYear=(TextInputEditText)findViewById(R.id.year_of_hsc_diploma);
-        stu_hscDiplo_college=(TextInputEditText)findViewById(R.id.hsc_diploma_college_name);
-        stu_hscDiplo_percentage=(TextInputEditText)findViewById(R.id.percent_hsc_diploma);
-        stu_sem1_spi=(TextInputEditText)findViewById(R.id.spi_sem1);
-        stu_sem2_spi=(TextInputEditText)findViewById(R.id.spi_sem2);
-        stu_sem3_spi=(TextInputEditText)findViewById(R.id.spi_sem3);
-        stu_sem4_spi=(TextInputEditText)findViewById(R.id.spi_sem4);
-        stu_sem5_spi=(TextInputEditText)findViewById(R.id.spi_sem5);
-        stu_sem6_spi=(TextInputEditText)findViewById(R.id.spi_sem6);
-        stu_cgpa=(TextInputEditText)findViewById(R.id.cgpa);
+        stu_name= findViewById(R.id.full_name);
+        stu_prn= findViewById(R.id.prn_no);
+        stu_dob= findViewById(R.id.birth_date);
+        stu_age= findViewById(R.id.age);
+        stu_college_email= findViewById(R.id.email_college);
+        stu_alt_email= findViewById(R.id.email_alt);
+        stu_phone= findViewById(R.id.mobile);
+        stu_alt_phone= findViewById(R.id.mobile_alt);
+        stu_linkdin= findViewById(R.id.linkdin);
+        stu_per_address= findViewById(R.id.address_per);
+        stu_res_address= findViewById(R.id.address_res);
+        stu_ssc_passYear= findViewById(R.id.year_of_ssc);
+        stu_ssc_school= findViewById(R.id.scc_school_name);
+        stu_ssc_percentage= findViewById(R.id.percent_ssc);
+        stu_hscDiplo_passYear= findViewById(R.id.year_of_hsc_diploma);
+        stu_hscDiplo_college= findViewById(R.id.hsc_diploma_college_name);
+        stu_hscDiplo_percentage= findViewById(R.id.percent_hsc_diploma);
+        stu_sem1_spi= findViewById(R.id.spi_sem1);
+        stu_sem2_spi= findViewById(R.id.spi_sem2);
+        stu_sem3_spi= findViewById(R.id.spi_sem3);
+        stu_sem4_spi= findViewById(R.id.spi_sem4);
+        stu_sem5_spi= findViewById(R.id.spi_sem5);
+        stu_sem6_spi= findViewById(R.id.spi_sem6);
+        stu_cgpa= findViewById(R.id.cgpa);
 
-        update=(Button)findViewById(R.id.update_student_profile);
+        update= findViewById(R.id.update_student_profile);
 
 
 
