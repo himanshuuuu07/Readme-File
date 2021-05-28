@@ -3,7 +3,6 @@ package com.example.newtpo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -15,12 +14,16 @@ public class student_home_page extends AppCompatActivity {
 
     LinearLayout cstudent_profile;
 
+    private FirebaseAuth fAuth=FirebaseAuth.getInstance();
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_home_page);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+      //  getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
         cstudent_profile=(LinearLayout) findViewById(R.id.profile_student);
@@ -36,15 +39,16 @@ public class student_home_page extends AppCompatActivity {
 
     }
 
-    public void edit_stu_profile(View view){
-        startActivity(new Intent(getApplicationContext(),edit_student_profile.class));
-    }
+
+
+
 
 
     public void logout(View view){
-        FirebaseAuth.getInstance().signOut();
+        fAuth.signOut();
         Toast.makeText(student_home_page.this,"Logged out Sucessfully",Toast.LENGTH_SHORT).show();
         startActivity(new Intent(getApplicationContext(),student_login.class));
         finish();
     }
+
 }

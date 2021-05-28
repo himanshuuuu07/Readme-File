@@ -3,6 +3,8 @@
     package="com.example.newtpo">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,10 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewTPO">
-        <activity android:name=".Forgot_password"></activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".edit_student_profile" />
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".student_profile" />
+        <activity android:name=".student_signup_form" />
+        <activity android:name=".Forgot_password" />
+        <activity android:name=".TPO_Dashboard" />
+        <activity android:name=".StudentData" />
+        <activity android:name=".edit_student_profile" />
         <activity android:name=".student_home_page" />
         <activity android:name=".student_signup" />
         <activity android:name=".student_login" />

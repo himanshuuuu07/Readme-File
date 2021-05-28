@@ -1,8 +1,8 @@
 package com.example.newtpo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -34,7 +34,7 @@ public class edit_student_profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_student_profile);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+      //  getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
         firebaseAuth=FirebaseAuth.getInstance();
@@ -130,15 +130,18 @@ public class edit_student_profile extends AppCompatActivity {
        spi_sem5=stu_sem5_spi.getText().toString().trim();
        spi_sem6=stu_sem6_spi.getText().toString().trim();
        cgpa=stu_cgpa.getText().toString().trim();
+
+       String isUser="1";
        
        //String path="Students"+"BTech"+branch;
        dRef=FirebaseFirestore.getInstance().collection("Students").document(prn);
-       student stu=new student(fullName,prn,branch,email,altEmail,dob,phone,phone_alt,linkdin_id,gender,pAddress,rAddress,collgen12_diploma_Name,schoolName10,passingYear,currentYear,age,passYear12_diploma,passingyear10,percent12,percent10,userID,spi_sem1,spi_sem2,spi_sem3,spi_sem4,spi_sem5,spi_sem6,cgpa);
+       Student stu=new Student(fullName,prn,branch,email,altEmail,dob,phone,phone_alt,linkdin_id,gender,pAddress,rAddress,collgen12_diploma_Name,schoolName10,passingYear,currentYear,age,passYear12_diploma,passingyear10,percent12,percent10,userID,spi_sem1,spi_sem2,spi_sem3,spi_sem4,spi_sem5,spi_sem6,cgpa,isUser);
 
        dRef.set(stu).addOnSuccessListener(new OnSuccessListener<Void>() {
            @Override
            public void onSuccess(Void unused) {
                Toast.makeText(edit_student_profile.this,"Updated Sucessfully",Toast.LENGTH_SHORT).show();
+               startActivity(new Intent(getApplicationContext(),student_home_page.class));
                finish();
            }
        }).addOnFailureListener(new OnFailureListener() {

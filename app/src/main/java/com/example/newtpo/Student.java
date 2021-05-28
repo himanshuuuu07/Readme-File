@@ -1,16 +1,15 @@
 package com.example.newtpo;
 
-public class student {
+public class Student {
 
     String fullName, prn, branch, email, altEmail, dob, phone, phone_alt, linkdin_id, gender;
     String pAddress, rAddress, collgen12_diploma_Name, schoolName10;
     String passingYear, currentYear, age, passYear12_diploma, passingyear10;
     String percent12, percent10, userID;
     String spi_sem1, spi_sem2, spi_sem3, spi_sem4, spi_sem5, spi_sem6, cgpa;
+    String isUser;
 
-   
-
-    public student(String fullName, String prn, String branch, String email, String altEmail, String dob, String phone, String phone_alt, String linkdin_id, String gender, String pAddress, String rAddress, String collgen12_diploma_Name, String schoolName10, String passingYear, String currentYear, String age, String passYear12_diploma, String passingyear10, String percent12, String percent10, String userID, String spi_sem1, String spi_sem2, String spi_sem3, String spi_sem4, String spi_sem5, String spi_sem6, String cgpa) 
+    public Student(String fullName, String prn, String branch, String email, String altEmail, String dob, String phone, String phone_alt, String linkdin_id, String gender, String pAddress, String rAddress, String collgen12_diploma_Name, String schoolName10, String passingYear, String currentYear, String age, String passYear12_diploma, String passingyear10, String percent12, String percent10, String userID, String spi_sem1, String spi_sem2, String spi_sem3, String spi_sem4, String spi_sem5, String spi_sem6, String cgpa, String isUser)
     {
         this.fullName = fullName;
         this.prn = prn;
@@ -41,12 +40,8 @@ public class student {
         this.spi_sem5 = spi_sem5;
         this.spi_sem6 = spi_sem6;
         this.cgpa = cgpa;
+        this.isUser = isUser;
     }
-
-    public student() {
-
-    }
-
 
     public String getFullName() {
         return fullName;
@@ -132,7 +127,7 @@ public class student {
         return percent10;
     }
 
-    public String getuserID() {
+    public String getUserID() {
         return userID;
     }
 
@@ -162,5 +157,9 @@ public class student {
 
     public String getCgpa() {
         return cgpa;
+    }
+
+    public String getIsUser() {
+        return isUser;
     }
 }

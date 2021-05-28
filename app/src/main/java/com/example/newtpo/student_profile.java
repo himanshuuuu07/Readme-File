@@ -2,212 +2,124 @@ package com.example.newtpo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class student_profile extends AppCompatActivity {
+import org.jetbrains.annotations.NotNull;
 
+public class student_profile extends AppCompatActivity
+{
 
-    TextView stu_name,stu_prn,stu_dob,stu_age,stu_college_email,stu_alt_email,stu_phone,stu_alt_phone,stu_linkdin,stu_per_address,stu_res_address,stu_ssc_passYear,stu_ssc_school,stu_ssc_percentage,stu_hscDiplo_passYear,stu_hscDiplo_college,stu_hscDiplo_percentage,stu_sem1_spi,stu_sem2_spi,stu_sem3_spi,stu_sem4_spi,stu_sem5_spi,stu_sem6_spi,stu_cgpa,stu_branch,stu_gender,stu_year_ofStudy,stu_year_ofGraduation;
-    private DocumentReference dRef;
-    private String fullName,prn,branch,email,altEmail,dob,phone,phone_alt,linkdin_id,gender,pAddress,rAddress,collgen12_diploma_Name,schoolName10,passingYear,currentYear,age,passYear12_diploma,passingyear10,percent12,percent10,spi_sem1,spi_sem2,spi_sem3,spi_sem4,spi_sem5,spi_sem6,cgpa;
-    student stu;
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        dRef= FirebaseFirestore.getInstance().document("Students");
-
-        stu_branch=(TextView) findViewById(R.id.branch);
-        stu_gender=(TextView) findViewById(R.id.gender);
-        stu_year_ofStudy=(TextView) findViewById(R.id.year_of_study);
-        stu_year_ofGraduation=(TextView) findViewById(R.id.year_of_graduation);
-
-        stu_name=(TextView) findViewById(R.id.full_name);
-        stu_prn=(TextView) findViewById(R.id.prn_no);
-        stu_dob=(TextView) findViewById(R.id.birth_date);
-        stu_age=(TextView) findViewById(R.id.age);
-        stu_college_email=(TextView) findViewById(R.id.email_college);
-        stu_alt_email=(TextView) findViewById(R.id.email_alt);
-        stu_phone=(TextView) findViewById(R.id.mobile);
-        stu_alt_phone=(TextView) findViewById(R.id.mobile_alt);
-        stu_linkdin=(TextView) findViewById(R.id.linkdin);
-        stu_per_address=(TextView) findViewById(R.id.address_per);
-        stu_res_address=(TextView) findViewById(R.id.address_res);
-        stu_ssc_passYear=(TextView) findViewById(R.id.year_of_ssc);
-        stu_ssc_school=(TextView) findViewById(R.id.scc_school_name);
-        stu_ssc_percentage=(TextView) findViewById(R.id.percent_ssc);
-        stu_hscDiplo_passYear=(TextView) findViewById(R.id.year_of_hsc_diploma);
-        stu_hscDiplo_college=(TextView) findViewById(R.id.hsc_diploma_college_name);
-        stu_hscDiplo_percentage=(TextView) findViewById(R.id.percent_hsc_diploma);
-        stu_sem1_spi=(TextView) findViewById(R.id.spi_sem1);
-        stu_sem2_spi=(TextView) findViewById(R.id.spi_sem2);
-        stu_sem3_spi=(TextView) findViewById(R.id.spi_sem3);
-        stu_sem4_spi=(TextView) findViewById(R.id.spi_sem4);
-        stu_sem5_spi=(TextView) findViewById(R.id.spi_sem5);
-        stu_sem6_spi=(TextView) findViewById(R.id.spi_sem6);
-        stu_cgpa=(TextView) findViewById(R.id.cgpa);
-
-
-
-        dRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                if(documentSnapshot.exists()){
-                    stu=documentSnapshot.toObject(student.class);
-                }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.w("Not Showing","Data",e);
-            }
-        });
-
-        stu_name.setText(stu.getFullName());
-        stu_prn.setText(stu.getPrn());
-        stu_dob.setText(stu.getDob());
-        stu_age.setText(stu.getAge());
-        stu_gender.setText(stu.getGender());
-        stu_college_email.setText(stu.getEmail());
-        stu_alt_email.setText(stu.getAltEmail());
-        stu_phone.setText(stu.getPhone());
-        stu_alt_phone.setText(stu.getPhone_alt());
-        stu_linkdin.setText(stu.getLinkdin_id());
-        stu_per_address.setText(stu.getpAddress());
-        stu_res_address.setText(stu.getrAddress());
-        stu_branch.setText(stu.getBranch());
-        stu_year_ofStudy.setText(stu.getCurrentYear());
-        stu_year_ofGraduation.setText(stu.getPassingYear());
-        stu_ssc_passYear.setText(stu.getPassingyear10());
-        stu_ssc_school.setText(stu.getSchoolName10());
-        stu_ssc_percentage.setText(stu.getPercent10());
-        stu_hscDiplo_passYear.setText(stu.getPassYear12_diploma());
-        stu_hscDiplo_college.setText((stu.getCollgen12_diploma_Name()));
-        stu_hscDiplo_percentage.setText(stu.getPercent12());
-        stu_sem1_spi.setText(stu.getSpi_sem1());
-        stu_sem2_spi.setText(stu.getSpi_sem2());
-        stu_sem3_spi.setText(stu.getSpi_sem3());
-        stu_sem4_spi.setText(stu.getSpi_sem4());
-        stu_sem5_spi.setText(stu.getSpi_sem5());
-        stu_sem6_spi.setText(stu.getSpi_sem6());
-        stu_cgpa.setText(stu.getCgpa());
-
-
-
-    }
+    TextView fName,prn,dob,age,gender,email,altEmail,mobileNumber,altMobileNumber,linkedIn,pAddress,rAddress;
+    TextView branch,yos,gy,s1,s2,s3,s4,s5,s6,cgpa;
+    TextView ssName,hsName,spyear,hpyear,sscore,hscore;
+    FirebaseAuth fAuth;
+    DocumentReference dr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_profile);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
+        fName=findViewById(R.id.stuName);
+        prn=findViewById(R.id.stuPRN);
+        dob=findViewById(R.id.stuDOB);
+        age=findViewById(R.id.stuAge);
+        gender=findViewById(R.id.stuGender);
+        email=findViewById(R.id.stuEmail);
+        altEmail=findViewById(R.id.stuAltEmail);
+        mobileNumber=findViewById(R.id.stuMobile);
+        altMobileNumber=findViewById(R.id.stuAltMobile);
+        linkedIn=findViewById(R.id.stuLinkedIN);
+        pAddress=findViewById(R.id.stuPermanentAddress);
+        rAddress=findViewById(R.id.stuResidentialAddress);
+        branch=findViewById(R.id.stuBranch);
+        yos=findViewById(R.id.stuCurrentYear);
+        gy=findViewById(R.id.stuPassYear);
+        s1=findViewById(R.id.stuSPI1);
+        s2=findViewById(R.id.stuSPI2);
+        s3=findViewById(R.id.stuSPI3);
+        s4=findViewById(R.id.stuSPI4);
+        s5=findViewById(R.id.stuSPI5);
+        s6=findViewById(R.id.stuSPI6);
+        cgpa=findViewById(R.id.stuCGPA);
+        ssName=findViewById(R.id.stuSscName);
+        spyear=findViewById(R.id.stuSSCPassYear);
+        sscore=findViewById(R.id.stuSscScore);
+        hsName=findViewById(R.id.stuHscName);
+        hpyear=findViewById(R.id.stuHsCPassYear);
+        hscore=findViewById(R.id.stuHscScore);
 
 
 
-//        dRef= FirebaseFirestore.getInstance().document("Students");
-//
-//        stu_branch=(TextView) findViewById(R.id.branch);
-//        stu_gender=(TextView) findViewById(R.id.gender);
-//        stu_year_ofStudy=(TextView) findViewById(R.id.year_of_study);
-//        stu_year_ofGraduation=(TextView) findViewById(R.id.year_of_graduation);
-//
-//        stu_name=(TextView) findViewById(R.id.full_name);
-//        stu_prn=(TextView) findViewById(R.id.prn_no);
-//        stu_dob=(TextView) findViewById(R.id.birth_date);
-//        stu_age=(TextView) findViewById(R.id.age);
-//        stu_college_email=(TextView) findViewById(R.id.email_college);
-//        stu_alt_email=(TextView) findViewById(R.id.email_alt);
-//        stu_phone=(TextView) findViewById(R.id.mobile);
-//        stu_alt_phone=(TextView) findViewById(R.id.mobile_alt);
-//        stu_linkdin=(TextView) findViewById(R.id.linkdin);
-//        stu_per_address=(TextView) findViewById(R.id.address_per);
-//        stu_res_address=(TextView) findViewById(R.id.address_res);
-//        stu_ssc_passYear=(TextView) findViewById(R.id.year_of_ssc);
-//        stu_ssc_school=(TextView) findViewById(R.id.scc_school_name);
-//        stu_ssc_percentage=(TextView) findViewById(R.id.percent_ssc);
-//        stu_hscDiplo_passYear=(TextView) findViewById(R.id.year_of_hsc_diploma);
-//        stu_hscDiplo_college=(TextView) findViewById(R.id.hsc_diploma_college_name);
-//        stu_hscDiplo_percentage=(TextView) findViewById(R.id.percent_hsc_diploma);
-//        stu_sem1_spi=(TextView) findViewById(R.id.spi_sem1);
-//        stu_sem2_spi=(TextView) findViewById(R.id.spi_sem2);
-//        stu_sem3_spi=(TextView) findViewById(R.id.spi_sem3);
-//        stu_sem4_spi=(TextView) findViewById(R.id.spi_sem4);
-//        stu_sem5_spi=(TextView) findViewById(R.id.spi_sem5);
-//        stu_sem6_spi=(TextView) findViewById(R.id.spi_sem6);
-//        stu_cgpa=(TextView) findViewById(R.id.cgpa);
-//
-//
-//
-//        dRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//            @Override
-//            public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                if(documentSnapshot.exists()){
-//                    stu=documentSnapshot.toObject(student.class);
-//                }
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull  Exception e) {
-//                Log.w("Not Showing","Data",e);
-//            }
-//        });
-//
-//        stu_name.setText(stu.getFullName());
-//        stu_prn.setText(stu.getPrn());
-//        stu_dob.setText(stu.getDob());
-//        stu_age.setText(stu.getAge());
-//        stu_gender.setText(stu.getGender());
-//        stu_college_email.setText(stu.getEmail());
-//        stu_alt_email.setText(stu.getAltEmail());
-//        stu_phone.setText(stu.getPhone());
-//        stu_alt_phone.setText(stu.getPhone_alt());
-//        stu_linkdin.setText(stu.getLinkdin_id());
-//        stu_per_address.setText(stu.getpAddress());
-//        stu_res_address.setText(stu.getrAddress());
-//        stu_branch.setText(stu.getBranch());
-//        stu_year_ofStudy.setText(stu.getCurrentYear());
-//        stu_year_ofGraduation.setText(stu.getPassingYear());
-//        stu_ssc_passYear.setText(stu.getPassingyear10());
-//        stu_ssc_school.setText(stu.getSchoolName10());
-//        stu_ssc_percentage.setText(stu.getPercent10());
-//        stu_hscDiplo_passYear.setText(stu.getPassYear12_diploma());
-//        stu_hscDiplo_college.setText((stu.getCollgen12_diploma_Name()));
-//        stu_hscDiplo_percentage.setText(stu.getPercent12());
-//        stu_sem1_spi.setText(stu.getSpi_sem1());
-//        stu_sem2_spi.setText(stu.getSpi_sem2());
-//        stu_sem3_spi.setText(stu.getSpi_sem3());
-//        stu_sem4_spi.setText(stu.getSpi_sem4());
-//        stu_sem5_spi.setText(stu.getSpi_sem5());
-//        stu_sem6_spi.setText(stu.getSpi_sem6());
-//        stu_cgpa.setText(stu.getCgpa());
+        fAuth=FirebaseAuth.getInstance();
+        FirebaseUser user=fAuth.getCurrentUser();
 
+        dr=FirebaseFirestore.getInstance().collection("Students").document(user.getUid());
+        dr.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists())
+                {
 
+                    fName.setText(documentSnapshot.getString("fullName"));
+                    prn.setText(documentSnapshot.getString("prn"));
+                    dob.setText(documentSnapshot.getString("dob"));
+                    age.setText(documentSnapshot.getString("age"));
+                    gender.setText(documentSnapshot.getString("gender"));
+                    email.setText(documentSnapshot.getString("email"));
+                    altEmail.setText(documentSnapshot.getString("altEmail"));
+                    mobileNumber.setText(documentSnapshot.getString("phone"));
+                    altMobileNumber.setText(documentSnapshot.getString("phone_alt"));
+                    linkedIn.setText(documentSnapshot.getString("linkdin_id"));
+                    pAddress.setText(documentSnapshot.getString("pAddress"));
+                    rAddress.setText(documentSnapshot.getString("rAddress"));
+                    branch.setText(documentSnapshot.getString("branch"));
+                    yos.setText(documentSnapshot.getString("currentYear"));
+                    gy.setText(documentSnapshot.getString("passingYear"));
+                    s1.setText(documentSnapshot.getString("spi_sem1"));
+                    s2.setText(documentSnapshot.getString("spi_sem2"));
+                    s3.setText(documentSnapshot.getString("spi_sem3"));
+                    s4.setText(documentSnapshot.getString("spi_sem4"));
+                    s5.setText(documentSnapshot.getString("spi_sem5"));
+                    s6.setText(documentSnapshot.getString("spi_sem6"));
+                    cgpa.setText(documentSnapshot.getString("cgpa"));
+                    ssName.setText(documentSnapshot.getString("schoolName10"));
+                    spyear.setText(documentSnapshot.getString("passingyear10"));
+                    sscore.setText(documentSnapshot.getString("percent10"));
+                    hsName.setText(documentSnapshot.getString("collgen12_diploma_Name"));
+                    hpyear.setText(documentSnapshot.getString("passYear12_diploma"));
+                    hscore.setText(documentSnapshot.getString("percent12"));
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"Document not found",Toast.LENGTH_SHORT).show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull @NotNull Exception e) {
+                Toast.makeText(getApplicationContext(),"Error"+e.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
-    public void btn_home (View view)
-    {
-        startActivity(new Intent(getApplicationContext(),student_home_page.class));
+    public void edit_stu_profile(View view){
+        startActivity(new Intent(getApplicationContext(),edit_student_profile.class));
     }
-
-//    public void btn_edit (View view)
-//    {
-//        startActivity(new Intent(getApplicationContext(),edit_student_profile.class));
-//    }
-
 
 }
