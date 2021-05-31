@@ -37,11 +37,11 @@ public class StudentData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_data);
 
-        stu_branch=(AutoCompleteTextView)findViewById(R.id.branch);
+        stu_branch= findViewById(R.id.branch);
         String[] items1=new String[]{"Computer Science and Engineering","Information Technology","Electronics","Electrical","Mechanical","Civil"};
         ArrayAdapter<String> adapter1=new ArrayAdapter<>(StudentData.this, R.layout.branch_item, items1);
         stu_branch.setAdapter(adapter1);
-        recyclerView=(RecyclerView)findViewById(R.id.recyclerView);
+        recyclerView= findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         listItem=new ArrayList<>();

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAD6FD"
+    android:background="#D78DFF"
     tools:context=".student_profile">
 
     <androidx.core.widget.NestedScrollView
@@ -46,7 +46,8 @@
                     android:id="@+id/stuName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bhushan Vinod Bari"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -70,8 +71,9 @@
                     android:id="@+id/stuPRN"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2019BTEIT00010"
+                    android:text=" "
                     android:textColor="@color/black"
+                    android:layout_marginLeft="10dp"
                     android:textSize="16dp"
                     android:textStyle="italic" />
             </LinearLayout>
@@ -94,7 +96,8 @@
                     android:id="@+id/stuDOB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="21/10/2001"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -118,7 +121,8 @@
                     android:id="@+id/stuAge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="20"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -142,7 +146,8 @@
                     android:id="@+id/stuGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Male"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -176,7 +181,8 @@
                     android:id="@+id/stuEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="bhushan.bari@walchandsangli.ac.in"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -200,7 +206,8 @@
                     android:id="@+id/stuAltEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="baribhushan9120@gmail.com"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -224,7 +231,8 @@
                     android:id="@+id/stuMobile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8830485758"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -248,7 +256,8 @@
                     android:id="@+id/stuAltMobile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8830485758"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -272,7 +281,8 @@
                     android:id="@+id/stuLinkedIN"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="http://xcuiqciu.ccb.ceb"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -296,7 +306,8 @@
                     android:id="@+id/stuPermanentAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bhusawal"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -320,7 +331,8 @@
                     android:id="@+id/stuResidentialAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sangli"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -355,7 +367,8 @@
                     android:id="@+id/stuBranch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Information Technology"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -379,7 +392,8 @@
                     android:id="@+id/stuCurrentYear"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Second Year"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -403,7 +417,8 @@
                     android:id="@+id/stuPassYear"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2023"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -427,7 +442,8 @@
                     android:id="@+id/stuSPI1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8.75"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -451,7 +467,8 @@
                     android:id="@+id/stuSPI2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8.75"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -475,7 +492,8 @@
                     android:id="@+id/stuSPI3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8.75"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -499,7 +517,8 @@
                     android:id="@+id/stuSPI4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8.75"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -523,7 +542,8 @@
                     android:id="@+id/stuSPI5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8.75"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -547,7 +567,8 @@
                     android:id="@+id/stuSPI6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8.75"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -571,7 +592,8 @@
                     android:id="@+id/stuCGPA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8.75"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -605,7 +627,8 @@
                     android:id="@+id/stuSscName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TPS Bhusawal"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -629,7 +652,8 @@
                     android:id="@+id/stuSSCPassYear"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8.75"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -653,7 +677,8 @@
                     android:id="@+id/stuSscScore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="91.2%"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -678,7 +703,8 @@
                     android:id="@+id/stuHscName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MVA Bhusawal"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -702,7 +728,8 @@
                     android:id="@+id/stuHsCPassYear"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8.75"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
@@ -712,7 +739,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:layout_width="160dp"
@@ -726,10 +754,12 @@
                     android:id="@+id/stuHscScore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="91.2%"
+                    android:text=" "
+                    android:layout_marginLeft="10dp"
                     android:textColor="@color/black"
                     android:textSize="16dp"
                     android:textStyle="italic" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -744,6 +774,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="50dp"
         android:layout_marginRight="15dp"
-        android:onClick="edit_stu_profile"/>
+        android:onClick="edit_stu_profile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
