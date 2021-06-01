@@ -9,6 +9,12 @@ public class Student {
     String spi_sem1, spi_sem2, spi_sem3, spi_sem4, spi_sem5, spi_sem6, cgpa;
     String isUser;
 
+    public Student() {
+    }
+
+    public void display(){}
+
+
     public Student(String fullName, String prn, String branch, String email, String altEmail, String dob, String phone, String phone_alt, String linkdin_id, String gender, String pAddress, String rAddress, String collgen12_diploma_Name, String schoolName10, String passingYear, String currentYear, String age, String passYear12_diploma, String passingyear10, String percent12, String percent10, String userID, String spi_sem1, String spi_sem2, String spi_sem3, String spi_sem4, String spi_sem5, String spi_sem6, String cgpa, String isUser)
     {
         this.fullName = fullName;
@@ -161,5 +167,126 @@ public class Student {
 
     public String getIsUser() {
         return isUser;
+    }
+
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setPrn(String prn) {
+        this.prn = prn;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setAltEmail(String altEmail) {
+        this.altEmail = altEmail;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setPhone_alt(String phone_alt) {
+        this.phone_alt = phone_alt;
+    }
+
+    public void setLinkdin_id(String linkdin_id) {
+        this.linkdin_id = linkdin_id;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setpAddress(String pAddress) {
+        this.pAddress = pAddress;
+    }
+
+    public void setrAddress(String rAddress) {
+        this.rAddress = rAddress;
+    }
+
+    public void setCollgen12_diploma_Name(String collgen12_diploma_Name) {
+        this.collgen12_diploma_Name = collgen12_diploma_Name;
+    }
+
+    public void setSchoolName10(String schoolName10) {
+        this.schoolName10 = schoolName10;
+    }
+
+    public void setPassingYear(String passingYear) {
+        this.passingYear = passingYear;
+    }
+
+    public void setCurrentYear(String currentYear) {
+        this.currentYear = currentYear;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public void setPassYear12_diploma(String passYear12_diploma) {
+        this.passYear12_diploma = passYear12_diploma;
+    }
+
+    public void setPassingyear10(String passingyear10) {
+        this.passingyear10 = passingyear10;
+    }
+
+    public void setPercent12(String percent12) {
+        this.percent12 = percent12;
+    }
+
+    public void setPercent10(String percent10) {
+        this.percent10 = percent10;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public void setSpi_sem1(String spi_sem1) {
+        this.spi_sem1 = spi_sem1;
+    }
+
+    public void setSpi_sem2(String spi_sem2) {
+        this.spi_sem2 = spi_sem2;
+    }
+
+    public void setSpi_sem3(String spi_sem3) {
+        this.spi_sem3 = spi_sem3;
+    }
+
+    public void setSpi_sem4(String spi_sem4) {
+        this.spi_sem4 = spi_sem4;
+    }
+
+    public void setSpi_sem5(String spi_sem5) {
+        this.spi_sem5 = spi_sem5;
+    }
+
+    public void setSpi_sem6(String spi_sem6) {
+        this.spi_sem6 = spi_sem6;
+    }
+
+    public void setCgpa(String cgpa) {
+        this.cgpa = cgpa;
+    }
+
+    public void setIsUser(String isUser) {
+        this.isUser = isUser;
     }
 }

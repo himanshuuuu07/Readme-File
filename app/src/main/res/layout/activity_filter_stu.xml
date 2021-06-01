@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5C1EC"
+    android:orientation="vertical"
+    tools:context=".FilterStu">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sort By"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/ChipGrp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/CGPA8"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CGPA >8"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="#7e57c2" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/CGPA7.5"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CGPA >7.5"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="#7e57c2" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/CGPA7"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CGPA >7"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="#7e57c2" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/CGPA6.5"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CGPA >6.5"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="#7e57c2" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/Civil"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Civil"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="#7e57c2" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/IT"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IT"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="#7e57c2" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/CSE"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CSE"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="#7e57c2" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/Mech"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mech"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="#7e57c2" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/EL"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EL"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="#7e57c2" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/EN"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EN"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="#7e57c2" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/filtApply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/round_button"
+        android:text="Apply" />
+</LinearLayout>
