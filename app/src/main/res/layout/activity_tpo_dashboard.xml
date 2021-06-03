@@ -25,7 +25,6 @@
                 android:textColor="#ffffff"/>
 
             <ImageView
-                android:id="@+id/logout"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/logout"
@@ -124,7 +123,6 @@
                     android:onClick="records">
 
                     <ImageView
-                        android:id="@+id/studata"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:src="@drawable/mortarboard"/>
