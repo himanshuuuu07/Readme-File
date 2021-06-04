@@ -41,6 +41,12 @@ public class student_home_page extends AppCompatActivity {
 
 
 
+    
+
+
+
+
+
 
 
 
@@ -51,4 +57,14 @@ public class student_home_page extends AppCompatActivity {
         finish();
     }
 
+    public void records(View view) {
+
+        startActivity(new Intent(getApplicationContext(),StudentViewpdf.class));
+    }
+
+
+
+    public void policy(View view) {
+        startActivity(new Intent(getApplicationContext(),PolicyPdf.class));
+    }
 }

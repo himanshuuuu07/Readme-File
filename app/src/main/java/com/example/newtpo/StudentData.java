@@ -174,7 +174,6 @@ public class StudentData extends AppCompatActivity {
                             List<DocumentSnapshot> list=queryDocumentSnapshots.getDocuments();
                             for(DocumentSnapshot d:list)
                             {
-
                                 Student obj=d.toObject(Student.class);
                                 listItem.add(obj);
                                 Log.d("Tag",obj.getFullName());
@@ -488,6 +487,8 @@ public class StudentData extends AppCompatActivity {
 
         }
     }
+
+
 
     public void download_stu_data(View view){
 

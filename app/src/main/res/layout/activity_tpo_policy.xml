@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TpoPolicy"
+    android:background="@drawable/image"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:text="Placement Policy"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:textStyle="bold|italic"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="View Policy"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"/>
+
+        <Button
+            android:id="@+id/ViewPolicy_TPO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:text="Update Policy"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
+            android:layout_marginBottom="10dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:textColorHint="#000"
+            app:hintTextColor="#000"
+            app:boxStrokeColor="#000"
+            android:enabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/policy_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description"
+            android:textColorHint="#000"
+            app:hintTextColor="#000"
+            app:boxStrokeColor="#000"
+            android:enabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/policy_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/updatepolicy"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Browse File"
+            android:textStyle="italic"
+            android:textSize="17dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/update_toDB_Policy"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="Upload File"
+                android:textStyle="italic"
+                android:textSize="17dp"/>
+            <Button
+                android:id="@+id/cancel_policy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textStyle="italic"
+                android:textSize="17dp"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

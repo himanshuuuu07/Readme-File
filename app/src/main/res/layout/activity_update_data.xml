@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Update_data"
+    android:background="#FEE0FF"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="25dp"
+        android:text="Enter File Name"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Note: "
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="File name should be with proper extension as it is case sensitive (e.g.  Students.xls   is different from   student.xls)"
+        android:textSize="15dp"
+        android:textColor="#000"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="File Name"
+        app:hintTextColor="#0483BD"
+        app:boxStrokeColor="#0483BD"
+        android:textColorHint="#0483BD"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_margin="10dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/file_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="#000"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_button"
+        android:text="Update"
+        android:layout_margin="35dp"/>
+
+
+
+</LinearLayout>

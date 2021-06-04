@@ -32,4 +32,12 @@ public class TPO_Dashboard extends AppCompatActivity {
     public void records(View view){
         startActivity(new Intent(getApplicationContext(),StudentData.class));
     }
+
+    public void records_tpo(View view) {
+        startActivity(new Intent(getApplicationContext(),ViewFiles.class));
+    }
+
+    public void policy_tpo(View view) {
+        startActivity(new Intent(getApplicationContext(),TpoPolicy.class));
+    }
 }

@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +14,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewTPO">
-        <activity android:name=".FilterStu"></activity>
+        <activity android:name=".PolicyPdf"></activity>
+        <activity android:name=".StudentViewpdf" />
+        <activity android:name=".TpoPolicy" />
+        <activity android:name=".UploadFile_TPO" />
+        <activity android:name=".ViewFiles" />
+        <activity android:name=".ViewPDF" />
+        <activity android:name=".Update_data" />
+        <activity android:name=".FilterStu" />
         <activity android:name=".MainActivity" />
         <activity android:name=".student_profile" />
         <activity android:name=".student_signup_form" />
@@ -34,8 +41,5 @@
             </intent-filter>
         </activity>
     </application>
-
-
-
 
 </manifest>
