@@ -14,7 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewTPO">
-        <activity android:name=".PolicyPdf"></activity>
+        <activity android:name=".EditAcademicDetails"></activity>
+        <activity android:name=".EditContactDetails" />
+        <activity android:name=".EditGeneralDetails" />
+        <activity android:name=".PolicyPdf" />
         <activity android:name=".StudentViewpdf" />
         <activity android:name=".TpoPolicy" />
         <activity android:name=".UploadFile_TPO" />
