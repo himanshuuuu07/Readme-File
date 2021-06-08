@@ -1,5 +1,6 @@
 package com.example.newtpo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +24,7 @@ public class Notification_TPO extends AppCompatActivity
     DatabaseReference db;
     TextInputEditText title,description;
     String send="Message By: TPO";
-    Button push;
+    Button push,view_notification;
     Calendar currentTime;
 
     String theDate;
@@ -38,8 +39,17 @@ public class Notification_TPO extends AppCompatActivity
         title=findViewById(R.id.notification_title_get);
         description=findViewById(R.id.notification_description_get);
         push=findViewById(R.id.pushNotification_button);
+        view_notification=findViewById(R.id.view_notification);
         currentTime = Calendar.getInstance();
         theDate=currentTime.getTime().toLocaleString();
+
+
+        view_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),ViewNotification.class));
+            }
+        });
 
 
 

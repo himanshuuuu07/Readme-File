@@ -29,8 +29,12 @@ public class TPO_Dashboard extends AppCompatActivity {
     }
 
 
-    public void records(View view){
+    public void stu_data(View view){
         startActivity(new Intent(getApplicationContext(),StudentData.class));
+    }
+
+    public void bulk_update(View view){
+        startActivity(new Intent(getApplicationContext(),Update_data.class));
     }
 
     public void records_tpo(View view) {
@@ -39,5 +43,9 @@ public class TPO_Dashboard extends AppCompatActivity {
 
     public void policy_tpo(View view) {
         startActivity(new Intent(getApplicationContext(),TpoPolicy.class));
+    }
+
+    public void notifications_tpo(View view) {
+        startActivity(new Intent(getApplicationContext(),Notification_TPO.class));
     }
 }

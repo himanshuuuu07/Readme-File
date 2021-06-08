@@ -67,4 +67,8 @@ public class student_home_page extends AppCompatActivity {
     public void policy(View view) {
         startActivity(new Intent(getApplicationContext(),PolicyPdf.class));
     }
+
+    public void view_notifications(View view) {
+        startActivity(new Intent(getApplicationContext(),ViewNotification.class));
+    }
 }

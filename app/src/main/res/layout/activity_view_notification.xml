@@ -14,14 +14,5 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="50dp"
-        android:layout_marginRight="20dp"
-        android:src="@drawable/bellnotification"
-        app:maxImageSize="30dp"
-        android:id="@+id/pushNotification"/>
+
 </RelativeLayout>

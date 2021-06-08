@@ -70,7 +70,19 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:text="Send"
-        android:textStyle="bold|italic"
         android:textSize="20dp"
         android:background="@drawable/round_button"/>
+
+    <Button
+        android:id="@+id/view_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:text="View Notifications"
+        android:textSize="20dp"
+        android:background="@drawable/round_button"/>
+
+
 </LinearLayout>
