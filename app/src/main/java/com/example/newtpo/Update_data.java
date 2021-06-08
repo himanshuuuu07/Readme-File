@@ -1,13 +1,17 @@
 package com.example.newtpo;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -20,10 +24,12 @@ import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,26 +38,93 @@ public class Update_data extends AppCompatActivity {
 
     TextInputEditText filename;
     String fileName;
-
+    FirebaseFirestore db;
+    ArrayList<Student> listItem=new ArrayList<Student>();
+    Button bulkupdate;
+    Student student=new Student();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_data);
 
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
+
+
         filename=findViewById(R.id.file_name);
+        bulkupdate=findViewById(R.id.bulk_update_data);
+        db= FirebaseFirestore.getInstance();
+
+        bulkupdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Toast.makeText(Update_data.this,"Updating...!!!",Toast.LENGTH_SHORT).show();
+                getDocument();
+                Toast.makeText(Update_data.this,"Updated Successfully",Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
     }
 
 
-    public void update(View view) throws IOException {
-        String docID=new String();
+
+
+    public void setData(Student stu)
+    {
+        FirebaseFirestore.getInstance()
+                .collection("Students")
+                .document(stu.getUserID()).set(stu);
+    }
+
+    protected void getDocument()
+    {
+        listItem=new ArrayList<Student>();
+
+        db.collection("Students").get()
+
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        List<DocumentSnapshot> list=queryDocumentSnapshots.getDocuments();
+                        for(DocumentSnapshot d:list)
+                        {
+                            Student obj=d.toObject(Student.class);
+                            listItem.add(obj);
+                        }
+
+                        updateData(listItem);
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull @NotNull Exception e) {
+                        Log.d("Tag","Inside failure");
+                    }
+                });
+    }
+
+    private void updateData(ArrayList<Student> listItem)
+    {
+        int listCnt=listItem.size();
         fileName="/";
         fileName= fileName+filename.getText().toString().trim();
         File filepath=new File(Environment.getExternalStorageDirectory()+fileName);
-        FileInputStream inputStream=new FileInputStream(filepath);
+        FileInputStream inputStream= null;
+        try {
+            inputStream = new FileInputStream(filepath);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
-        HSSFWorkbook workbook=new HSSFWorkbook(inputStream);
+        HSSFWorkbook workbook= null;
+        try {
+            workbook = new HSSFWorkbook(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         HSSFSheet sheet=workbook.getSheetAt(0);
 
         int rows=sheet.getPhysicalNumberOfRows();
@@ -60,124 +133,79 @@ public class Update_data extends AppCompatActivity {
         HSSFRow row1=sheet.getRow(0);
 
 
-        Log.d("Tag","before for1");
-
         for(int r=1;r<rows;r++)
         {
-            HSSFRow row2=sheet.getRow(r);
-            Student student=null;
 
-            Log.d("Tag","before for2");
+            HSSFRow row2=sheet.getRow(r);
+
             for(int c=1;c<cols;c++)
             {
                 HSSFCell cell=row2.getCell(0);
 
                 String prn=cell.getStringCellValue();
-                student=getDocument(prn);
 
-                if(student==null)
+
+                int x;
+                for(x=0;x<listCnt;x++)
+                {
+                    student=listItem.get(x);
+                    if(student.getPrn().equals(prn))
+                    {
+                        break;
+                    }
+                }
+
+                if(x==listCnt)
                 {
                     break;
                 }
 
 
                 HSSFCell cell1=row2.getCell(c);
+                DataFormatter formatter = new DataFormatter();
+                String strValue = formatter.formatCellValue(cell1);
 
-                if(!(row1.getCell(c).getStringCellValue().equalsIgnoreCase("SPI_SEM1")))
+                if((row1.getCell(c).getStringCellValue().equalsIgnoreCase("SPI_SEM1")))
                 {
-                    student.setSpi_sem1(cell1.getStringCellValue());
-                    continue;
+                    student.setSpi_sem1(strValue);
+                }
+                else if((row1.getCell(c).getStringCellValue().equalsIgnoreCase("SPI_SEM2")))
+                {
+                    student.setSpi_sem2(strValue);
+                }
+                else if((row1.getCell(c).getStringCellValue().equalsIgnoreCase("SPI_SEM3")))
+                {
+                    student.setSpi_sem3(strValue);
+                }
+                else if((row1.getCell(c).getStringCellValue().equalsIgnoreCase("SPI_SEM4")))
+                {
+                    student.setSpi_sem4(strValue);
+                }
+                else if((row1.getCell(c).getStringCellValue().equalsIgnoreCase("SPI_SEM5")))
+                {
+                    student.setSpi_sem5(strValue);
                 }
 
-                if(!(row1.getCell(c).getStringCellValue().equalsIgnoreCase("SPI_SEM2")))
+                else if((row1.getCell(c).getStringCellValue().equalsIgnoreCase("SPI_SEM6")))
                 {
-                    student.setSpi_sem2(cell1.getStringCellValue());
-                    continue;
+                    student.setSpi_sem6(strValue);
                 }
 
-                if(!(row1.getCell(c).getStringCellValue().equalsIgnoreCase("SPI_SEM3")))
+                else if((row1.getCell(c).getStringCellValue().equalsIgnoreCase("CGPA")))
                 {
-                    student.setSpi_sem3(cell1.getStringCellValue());
-                    continue;
-                }
-
-                if(!(row1.getCell(c).getStringCellValue().equalsIgnoreCase("SPI_SEM4")))
-                {
-                    student.setSpi_sem4(cell1.getStringCellValue());
-                    continue;
-                }
-
-                if(!(row1.getCell(c).getStringCellValue().equalsIgnoreCase("SPI_SEM5")))
-                {
-                    student.setSpi_sem5(cell1.getStringCellValue());
-                    continue;
-                }
-
-                if(!(row1.getCell(c).getStringCellValue().equalsIgnoreCase("SPI_SEM6")))
-                {
-                    student.setSpi_sem6(cell1.getStringCellValue());
-                    continue;
-                }
-
-                if(!(row1.getCell(c).getStringCellValue().equalsIgnoreCase("CGPA")))
-                {
-                    student.setCgpa(cell1.getStringCellValue());
-                    continue;
+                    student.setCgpa(strValue);
                 }
 
 
 
             }
-            Log.d("Tag","After for2");
+
             setData(student);
-            Log.d("Tag","Updated");
 
         }
 
-
-
-
-
-
-        Log.d("Tag","Sucessfully updated");
-
+        Toast.makeText(Update_data.this,"Sucessfully Updated",Toast.LENGTH_SHORT).show();
     }
-
-    public void setData(Student stu)
-    {
-        Log.d("Tag","IN setData");
-        FirebaseFirestore.getInstance().collection("Students").document(stu.getUserID()).set(stu);
-        Log.d("Tag","Sucessfully updated in set data");
-    }
-
-    public Student getDocument(String prn)
-    {
-        Log.d("Tag","In getDoc");
-        String documentId;
-        ArrayList<Student> listItem=new ArrayList<>();
-        FirebaseFirestore.getInstance().collection("Students").whereEqualTo("prn",prn).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                List<DocumentSnapshot> list=queryDocumentSnapshots.getDocuments();
-                for(DocumentSnapshot d:list)
-                {
-                    Student obj=d.toObject(Student.class);
-                    listItem.add(obj);
-                    Log.d("Tag",obj.getFullName());
-                }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull @NotNull Exception e) {
-                Toast.makeText(Update_data.this,e.getMessage(),Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        Student stu=listItem.get(0);
-        Log.d("Tag","End of getDoc");
-        return stu;
-    }
-
 
 
 }
