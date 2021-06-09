@@ -14,7 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewTPO">
-        <activity android:name=".Notification_TPO"></activity>
+        <activity android:name=".View_Logs"></activity>
+        <activity android:name=".Staff_Profile" />
+        <activity android:name=".Staff_Login" />
+        <activity android:name=".Staff_Home_Page" />
+        <activity android:name=".Notification_TPO" />
         <activity android:name=".ViewNotification" />
         <activity android:name=".EditAcademicDetails" />
         <activity android:name=".EditContactDetails" />

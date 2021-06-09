@@ -1,6 +1,7 @@
 package com.example.newtpo;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
@@ -16,6 +17,9 @@ import androidx.core.app.ActivityCompat;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -32,6 +36,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Update_data extends AppCompatActivity {
@@ -40,8 +45,11 @@ public class Update_data extends AppCompatActivity {
     String fileName;
     FirebaseFirestore db;
     ArrayList<Student> listItem=new ArrayList<Student>();
-    Button bulkupdate;
+    Button bulkupdate,logs;
     Student student=new Student();
+    DatabaseReference dbr;
+    String userName,time,uid;
+    Calendar currentTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +61,19 @@ public class Update_data extends AppCompatActivity {
 
         filename=findViewById(R.id.file_name);
         bulkupdate=findViewById(R.id.bulk_update_data);
+        logs=findViewById(R.id.logsButton);
         db= FirebaseFirestore.getInstance();
+        dbr= FirebaseDatabase.getInstance().getReference("Logs");
+        currentTime = Calendar.getInstance();
+        time=currentTime.getTime().toLocaleString();
+        uid= FirebaseAuth.getInstance().getUid();
+        db.collection("TPO").document(uid).get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        userName=documentSnapshot.getString("Name");
+                    }
+                });
 
         bulkupdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +82,26 @@ public class Update_data extends AppCompatActivity {
                 Toast.makeText(Update_data.this,"Updating...!!!",Toast.LENGTH_SHORT).show();
                 getDocument();
                 Toast.makeText(Update_data.this,"Updated Successfully",Toast.LENGTH_SHORT).show();
+
+                Logs obj=new Logs(userName,time);
+                dbr.child(dbr.push().getKey()).setValue(obj)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull @NotNull Exception e) {
+                            }
+                        });
+            }
+        });
+
+        logs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),View_Logs.class));
             }
         });
 

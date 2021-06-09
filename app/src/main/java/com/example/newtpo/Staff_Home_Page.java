@@ -9,21 +9,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class TPO_Dashboard extends AppCompatActivity {
+public class Staff_Home_Page extends AppCompatActivity {
 
     private FirebaseAuth fAuth=FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tpo_dashboard);
+        setContentView(R.layout.activity_staff_home_page);
     }
 
 
 
     public void logout(View view){
         fAuth.signOut();
-        Toast.makeText(TPO_Dashboard.this,"Logged out Sucessfully",Toast.LENGTH_SHORT).show();
+        Toast.makeText(Staff_Home_Page.this,"Logged out Sucessfully",Toast.LENGTH_SHORT).show();
         startActivity(new Intent(getApplicationContext(),student_login.class));
         finish();
     }
@@ -41,15 +41,11 @@ public class TPO_Dashboard extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),ViewFiles.class));
     }
 
-    public void policy_tpo(View view) {
-        startActivity(new Intent(getApplicationContext(),TpoPolicy.class));
-    }
-
     public void notifications_tpo(View view) {
         startActivity(new Intent(getApplicationContext(),Notification_TPO.class));
     }
 
-    public void tpo_profile(View view) {
+    public void staff_profile(View view) {
         startActivity(new Intent(getApplicationContext(),Staff_Profile.class));
     }
 }

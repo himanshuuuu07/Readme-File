@@ -65,6 +65,15 @@
         android:text="Update"
         android:layout_margin="35dp"/>
 
+    <Button
+        android:id="@+id/logsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_button"
+        android:text="View Logs"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"/>
+
 
 
 </LinearLayout>
