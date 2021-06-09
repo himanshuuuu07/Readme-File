@@ -25,7 +25,7 @@ public class First_page extends AppCompatActivity {
 
         public void btn_staff (View view)
         {
-            startActivity(new Intent(getApplicationContext(),Login_0.class));
+            startActivity(new Intent(getApplicationContext(),Staff_Login.class));
             finish();
         }
         public void btn_student (View view)
