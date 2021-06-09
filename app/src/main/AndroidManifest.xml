@@ -31,7 +31,7 @@
         <activity android:name=".ViewPDF" />
         <activity android:name=".Update_data" />
         <activity android:name=".FilterStu" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".First_page" />
         <activity android:name=".student_profile" />
         <activity android:name=".student_signup_form" />
         <activity android:name=".Forgot_password" />
@@ -42,7 +42,7 @@
         <activity android:name=".student_signup" />
         <activity android:name=".student_login" />
         <activity android:name=".Login_0" />
-        <activity android:name=".First_page">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
